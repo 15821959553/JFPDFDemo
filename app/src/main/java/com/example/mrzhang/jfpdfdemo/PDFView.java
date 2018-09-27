@@ -1000,6 +1000,34 @@ public class PDFView extends SurfaceView {
     }
 
 
+    public  void  vFileFromLocalStorage(final OnPageChangeListener onPageChangeListener,
+                                       final OnLoadCompleteListener onLoadCompleteListener,
+                                       final OnDrawListener onDrawListener,
+                                       String fileUrl,
+                                       final String fileName
+                                       ){
+
+        try {
+            FileUtils.fileFromLocalStorage(fileUrl, fileName, new OnFileListener() {
+                @Override
+                public void setFile(File file) {
+                    new Configurator(Uri.fromFile(file)).defaultPage(1)         //设置默认显示第1页
+                            .onPageChange(onPageChangeListener)     //设置翻页监听
+                            .onLoad(onLoadCompleteListener)           //设置加载监听
+                            .onDraw(onDrawListener)            //绘图监听
+                            .showMinimap(false)     //pdf放大的时候，是否在屏幕的右上角生成小地图
+                            .swipeVertical( true )  //pdf文档翻页是否是垂直翻页，默认是左右滑动翻页
+                            .enableSwipe(true)   //是否允许翻页，默认是允许翻
+                            .load();
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
     public  void  fileFromLocalStorage(final OnPageChangeListener onPageChangeListener,
             final OnLoadCompleteListener onLoadCompleteListener,
                                        String fileUrl,
