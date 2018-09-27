@@ -975,10 +975,8 @@ public class PDFView extends SurfaceView {
                                        final OnLoadCompleteListener onLoadCompleteListener,
                                        final OnDrawListener onDrawListener,
                                        String fileUrl,
-                                       final String fileName,
-                                       final boolean showMinimap,
-                                       final boolean swipeVertical,
-                                       final boolean enableSwipe){
+                                       final String fileName
+                                       ){
 
         try {
             FileUtils.fileFromLocalStorage(fileUrl, fileName, new OnFileListener() {
@@ -988,9 +986,9 @@ public class PDFView extends SurfaceView {
                             .onPageChange(onPageChangeListener)     //设置翻页监听
                             .onLoad(onLoadCompleteListener)           //设置加载监听
                             .onDraw(onDrawListener)            //绘图监听
-                            .showMinimap(showMinimap)     //pdf放大的时候，是否在屏幕的右上角生成小地图
-                            .swipeVertical( swipeVertical )  //pdf文档翻页是否是垂直翻页，默认是左右滑动翻页
-                            .enableSwipe(enableSwipe)   //是否允许翻页，默认是允许翻
+                            .showMinimap(false)     //pdf放大的时候，是否在屏幕的右上角生成小地图
+                            .swipeVertical( false )  //pdf文档翻页是否是垂直翻页，默认是左右滑动翻页
+                            .enableSwipe(true)   //是否允许翻页，默认是允许翻
                             .load();
                 }
             });
