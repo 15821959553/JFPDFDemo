@@ -55,10 +55,10 @@ public class FileUtils {
     public static void  fileFromLocalStorage(String fileUrl, final String fileName, final OnFileListener listener)throws IOException {
         final String SDPath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/pdf/";
         final File file = new File(SDPath, fileName);
-        if (file.exists()){//文件已经存在，直接获取本地文件打开，否则从网络现在文件，文件下载成功之后再打开
-              listener.setFile(file);
-
-        }else {
+//        if (file.exists()){//文件已经存在，直接获取本地文件打开，否则从网络现在文件，文件下载成功之后再打开
+//              listener.setFile(file);
+//
+//        }else {
             ApiManager.downloadPicFromNet(fileUrl).subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(new Action1<ResponseBody>() {
@@ -112,7 +112,7 @@ public class FileUtils {
                             Log.d("h_bl", "文件下载失败");
                         }
                     });
-        }
+//        }
     }
 
 

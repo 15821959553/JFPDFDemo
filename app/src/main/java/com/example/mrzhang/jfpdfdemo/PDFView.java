@@ -982,8 +982,7 @@ public class PDFView extends SurfaceView {
                                        final boolean enableSwipe){
 
         try {
-            String time=new Date(System.currentTimeMillis()).toString();
-            FileUtils.fileFromLocalStorage(fileUrl, time+fileName, new OnFileListener() {
+            FileUtils.fileFromLocalStorage(fileUrl, fileName, new OnFileListener() {
                 @Override
                 public void setFile(File file) {
                             new Configurator(Uri.fromFile(file)).defaultPage(1)         //设置默认显示第1页
@@ -1010,8 +1009,7 @@ public class PDFView extends SurfaceView {
                                        ){
 
         try {
-            String time=new Date(System.currentTimeMillis()).toString();
-            FileUtils.fileFromLocalStorage(fileUrl, time+fileName, new OnFileListener() {
+            FileUtils.fileFromLocalStorage(fileUrl, fileName, new OnFileListener() {
                 @Override
                 public void setFile(File file) {
                     new Configurator(Uri.fromFile(file)).defaultPage(1)         //设置默认显示第1页
@@ -1037,8 +1035,7 @@ public class PDFView extends SurfaceView {
     ){
 
         try {
-            String time=new Date(System.currentTimeMillis()).toString();
-            FileUtils.fileFromLocalStorage(fileUrl, time+fileName, new OnFileListener() {
+            FileUtils.fileFromLocalStorage(fileUrl, fileName, new OnFileListener() {
                 @Override
                 public void setFile(File file) {
                     new Configurator(Uri.fromFile(file)).defaultPage(1)         //设置默认显示第1页
@@ -1064,8 +1061,7 @@ public class PDFView extends SurfaceView {
                                        final String fileName){
 
         try {
-            String time=new Date(System.currentTimeMillis()).toString();
-            FileUtils.fileFromLocalStorage(fileUrl, time+fileName, new OnFileListener() {
+            FileUtils.fileFromLocalStorage(fileUrl, fileName, new OnFileListener() {
                 @Override
                 public void setFile(File file) {
                     new Configurator(Uri.fromFile(file)).defaultPage(1)         //设置默认显示第1页
@@ -1088,8 +1084,7 @@ public class PDFView extends SurfaceView {
                                        final String fileName){
 
         try {
-            String time=new Date(System.currentTimeMillis()).toString();
-            FileUtils.fileFromLocalStorage(fileUrl, time+fileName, new OnFileListener() {
+            FileUtils.fileFromLocalStorage(fileUrl, fileName, new OnFileListener() {
                 @Override
                 public void setFile(File file) {
                     new Configurator(Uri.fromFile(file)).defaultPage(1)         //设置默认显示第1页
